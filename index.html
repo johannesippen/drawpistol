@@ -1,0 +1,159 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: default
+title: Drawpistol
+---
+
+<section class="opener">
+  <h1>
+    <img alt="Drawpistol" src="/assets/drawpistol-logo.svg">
+  </h1>
+  <div class="animation">
+    <img src="https://placehold.it/1000x1000">
+  </div>
+</section>
+<section class="intro">
+  <p>Mikko Lepistö, known as Drawpistol, lives and breathes freestyle. He specializes in creative flows where nothing is pre-planned, with everything born spontaneously from the moment’s feeling. His art is like a continuous game where chance and skill intertwine seamlessly. The pandemic led him to discover a completely unique technique that brings his improvisation to a new level. Therefore each work of his is a manifestation of freedom and self-expression.</p>
+</section>
+<section class="gallery">
+  <div class="columns">
+    <div class="col left">
+      <img src="https://placehold.it/300x300">
+      <img src="https://placehold.it/300x400">
+      <img src="https://placehold.it/300x300">
+    </div>
+    <div class="col middle">
+      <img src="https://placehold.it/300x400">
+      <img src="https://placehold.it/300x300">
+      <img src="https://placehold.it/300x200">
+    </div>
+    <div class="col right">
+      <img src="https://placehold.it/300x200">
+      <img src="https://placehold.it/300x300">
+      <img src="https://placehold.it/300x400">
+    </div>
+  </div>
+  <div class="cta">
+    <a class="button" href="#">
+      <img src="https://placehold.it/48x48">
+      <div class="text">Instagram</div>
+    </a>
+  </div>
+</section>
+<section class="skateboard">
+  <h2>Kick</h2>
+  <img src="https://placehold.it/900x200">
+  <h2>Flip</h2>
+</section>
+<section class="albums">
+  <h2>Music</h2>
+  <div class="music">
+    <div class="c">
+      <img src="https://placehold.it/300x300">
+      <div class="info">Album Name</div>
+    </div>
+    <div class="c">
+      <img src="https://placehold.it/300x300">
+      <div class="info">Album Name</div>
+    </div>
+    <div class="c">
+      <img src="https://placehold.it/300x300">
+      <div class="info">Album Name</div>
+    </div>
+    <div class="c">
+      <img src="https://placehold.it/300x300">
+      <div class="info">Album Name</div>
+    </div>
+    <div class="c">
+      <img src="https://placehold.it/300x300">
+      <div class="info">Album Name</div>
+    </div>
+  </div>
+</section>
+<section class="etsy">
+  <h2>Wear</h2>
+  <div class="products">
+    <div class="product">
+      <img src="https://placehold.it/200x200">
+      <div class="product-name">Design-T-Shirt</div>
+    </div>
+    <div class="product">
+      <img src="https://placehold.it/200x200">
+      <div class="product-name">Design-T-Shirt</div>
+    </div>
+    <div class="product">
+      <img src="https://placehold.it/200x200">
+      <div class="product-name">Design-T-Shirt</div>
+    </div>
+    <div class="product">
+      <img src="https://placehold.it/200x200">
+      <div class="product-name">Design-T-Shirt</div>
+    </div>
+  </div>
+  <div class="cta">
+    <a class="button" href="#">More on Etsy</a>
+  </div>
+</section>
+<section class="contact">
+  <p>Let’s work together
+    <br>Reach out to Mikko 
+    <br>for collaboration:
+  </p>
+  <div class="cta">
+    <a class="button" href="#">Contact</a>
+  </div>
+  <div class="cta">
+    <a class="social" href="#">
+    <img alt="Instagram" src="https://placehold.it/48x48">
+    </a>
+    <a class="social" href="#">
+    <img alt="Linkedin" src="https://placehold.it/48x48">
+    </a>
+  </div>
+</section>
+<section class="footer">
+  <img src="https://placehold.it/128x128">
+  <div class="cta">
+    <a href="#">Imprint</a>
+  </div>
+</section>
+<script>
+	window.addEventListener('scroll', () => {
+		const sections = document.querySelectorAll('section');
+		const musicElements = document.querySelectorAll('.music > div');
+		const covers = musicElements.length;
+
+		sections.forEach(section => {
+			const topOffset = section.getBoundingClientRect().top;
+			const bottomOffset = topOffset + section.offsetHeight;
+			const viewportHeight = window.innerHeight;
+			const offsetInVH = (topOffset / viewportHeight) * 100;
+			const offsetOutVH = (bottomOffset / viewportHeight) * 100;
+
+			if (section.classList.contains('gallery')) {
+				const left = section.querySelector('.col.left'); 
+				const middle = section.querySelector('.col.middle'); 
+				const right = section.querySelector('.col.right'); 
+				if (left && right && middle && offsetInVH >= 0) { 
+					left.style.marginTop = Math.round(offsetInVH)+150 +'px';
+					middle.style.marginTop = (Math.round(offsetInVH) * 2) +'px';
+					right.style.marginTop = (Math.round(offsetInVH) * 1.5)+180+'px';
+				}
+			}
+
+			if (section.classList.contains('albums')) {
+				var stateValue = Math.round(offsetInVH / 5);
+				if(stateValue > covers - 1) { stateValue = covers - 1 }
+				if(stateValue < 0) { stateValue = 0 } 
+				console.log(stateValue);
+
+				musicElements.forEach((element, i) => {
+					element.classList.remove('active');
+					if(stateValue == i) { element.classList.add('active'); }
+				});
+			}
+		});
+	});
+	</script>

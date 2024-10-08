@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ page.title }}</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.description }}">
+    <meta name="keywords" content="{{ page.keywords }}">
+
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta property="og:image" content="{{ page.og_image }}">
+    <meta property="og:url" content="{{ page.permalink }}">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Human Deluxe Design Studio">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="Human Deluxe Design Studio">
+    <meta name="twitter:creator" content="{{ page.twitter_creator }}">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.description }}">
+    <meta name="twitter:image" content="{{ page.twitter_image }}">
+
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    {{ content }}
+  </body>
+</html>

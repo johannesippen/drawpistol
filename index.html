@@ -1,7 +1,4 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: default
 title: Drawpistol
 ---
@@ -11,7 +8,11 @@ title: Drawpistol
     <img alt="Drawpistol" src="{{ site.baseurl }}/assets/drawpistol-logo.svg">
   </h1>
   <div class="animation">
-    <img src="{{ site.baseurl }}/assets/emmigreta-static.jpg">
+    <video muted autoplay loop>
+      <source src="{{ site.baseurl }}/assets/emmigreta.webm" type="video/webm">
+      <source src="{{ site.baseurl }}/assets/emmigreta.ogv" type="video/ogg">
+      <img src="{{ site.baseurl }}/assets/emmigreta-static.jpg">
+    </video>
   </div>
 </section>
 <div class="gradient">
@@ -52,46 +53,41 @@ title: Drawpistol
 <section class="albums">
   <h2><img src="{{ site.baseurl }}/assets/listen.svg" alt="Listen"></h2>
   <div class="music">
-    <div class="c">
-      <img src="{{ site.baseurl }}/assets/placeholder-300.png">
+    <a href="https://share.amuse.io/album/mikael-h-optimisti?fbclid=IwY2xjawF9waJleHRuA2FlbQIxMAABHaNtGtwQ2nUPxfW4lL9xCqsxLjAciuua3v-AAYwfXf3lJvz9vCqF1782aQ_aem_yYc4G2Cw_F_J-lEk_3rVKQ" class="c">
+      <img src="{{ site.baseurl }}/assets/music-mikael-h.jpg">
       <div class="info">
-        Duran Duran Duran 
-        <div class="grey">Album Name</div>
-        <div class="grey">2022</div>
+        Mikael H
+        <div class="grey">Optimisti</div>
       </div>
-    </div>
-    <div class="c">
-      <img src="{{ site.baseurl }}/assets/placeholder-300.png">
+    </a>
+    <a href="https://open.spotify.com/album/2BeqDhVbIQS7UQWyh4reqi?si=d977dc8357e3404d" class="c">
+      <img src="{{ site.baseurl }}/assets/music-teemu-ahlfors-trio.jpg">
       <div class="info">
-        Duran Duran Duran 
-        <div class="grey">Album Name</div>
-        <div class="grey">2022</div>
+        Teemu Ahlfors Trio 
+        <div class="grey">It’s a Long Story</div>
       </div>
-    </div>
-    <div class="c">
-      <img src="{{ site.baseurl }}/assets/placeholder-300.png">
+    </a>
+    <a href="https://skwirl.bandcamp.com/album/oh-snap" class="c">
+      <img src="{{ site.baseurl }}/assets/music-skwirl.jpg">
       <div class="info">
-        Duran Duran Duran 
-        <div class="grey">Album Name</div>
-        <div class="grey">2022</div>
+        SKWIRL
+        <div class="grey">Oh Snap!</div>
       </div>
-    </div>
-    <div class="c">
-      <img src="{{ site.baseurl }}/assets/placeholder-300.png">
+    </a>
+    <a href="https://thecrane.bandcamp.com/album/for-the-birds"  class="c">
+      <img src="{{ site.baseurl }}/assets/music-the-crane.jpg">
       <div class="info">
-        Duran Duran Duran 
-        <div class="grey">Album Name</div>
-        <div class="grey">2022</div>
+        The Crane 
+        <div class="grey">For the Birds</div>
       </div>
-    </div>
-    <div class="c">
-      <img src="{{ site.baseurl }}/assets/placeholder-300.png">
+    </a>
+    <a href="https://soundcloud.com/underzen" class="c">
+      <img src="{{ site.baseurl }}/assets/music-underzen.jpg">
       <div class="info">
-        Duran Duran Duran 
-        <div class="grey">Album Name</div>
-        <div class="grey">2022</div>
+        Underzen
+        <div class="grey">For Elena</div>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 <section class="etsy">
@@ -144,7 +140,7 @@ title: Drawpistol
 <script>
 	window.addEventListener('scroll', () => {
 		const sections = document.querySelectorAll('section');
-		const musicElements = document.querySelectorAll('.music > div');
+		const musicElements = document.querySelectorAll('.music > a');
 		const covers = musicElements.length;
 
 		sections.forEach(section => {

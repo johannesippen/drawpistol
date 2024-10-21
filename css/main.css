@@ -13,7 +13,7 @@ a.button:active { border-width: 2px 4px 4px 2px; margin-top: 2px -2px -2px 2px; 
 
 section.opener { background: #E2EFFE; }
 .opener h1 img { margin: 0 3vw; width: 94vw; padding: 3vw 0; }
-.opener .animation img { width: 100%; display: block; max-width: 90rem; margin: 0 auto; }
+.opener .animation img, .opener .animation video { width: 100%; display: block; max-width: 90rem; margin: 0 auto; }
 
 section.intro { display: flex; flex-direction: column; align-items: center; padding-top: 5rem; padding-bottom: 0; }
 section.gallery { display: flex; flex-direction: column; align-items: center; padding-bottom: 10rem; }
@@ -29,7 +29,7 @@ section.skateboard { display: flex; flex-direction: column; align-items: center;
 
 section.albums { color: #fff; background: #000; padding: 5vw 0 10rem; }
 .music { display: flex; transform-style: preserve-3d; transform: perspective(50vw); justify-content: center; align-items: center; }
-.music .c { width: 20vw; height: 20vw; background: #ccc; transition: transform .2s ease-in; margin: 0 -2vw;  }
+.music .c { display: block; width: 20vw; height: 20vw; background: #ccc; transition: transform .2s ease-in; margin: 0 -2vw;  }
 .music .c img { width: 100%; display: block;}
 .music .info { display: none; margin-top: 1rem; }
 .music .active { background: blue; z-index: 1000; }
@@ -38,11 +38,11 @@ section.albums { color: #fff; background: #000; padding: 5vw 0 10rem; }
 .music .active + .c + .c {  transform: rotateY(-20deg); }
 .music .active + .c + .c + .c { transform: rotateY(-30deg); }
 .music .active + .c + .c + .c + .c {  transform: rotateY(-40deg); }
-.music div:has(+ .active) { transform: rotateY(10deg); }
-.music div:has(+ .c + .active) { transform: rotateY(20deg); }
-.music div:has(+ .c + .c + .active) { transform: rotateY(30deg); }
-.music div:has(+ .c + .c + .c + .active) { transform: rotateY(40deg); }
-.music div:has(+ .c + .c + .c + .c + .active) { transform: rotateY(50deg); }
+.music a:has(+ .active) { transform: rotateY(10deg); }
+.music a:has(+ .c + .active) { transform: rotateY(20deg); }
+.music a:has(+ .c + .c + .active) { transform: rotateY(30deg); }
+.music a:has(+ .c + .c + .c + .active) { transform: rotateY(40deg); }
+.music a:has(+ .c + .c + .c + .c + .active) { transform: rotateY(50deg); }
 
 section.etsy { display: flex; flex-direction: column; align-items: center; padding-top: 5rem; padding-bottom: 5rem; gap: 5rem; }
 

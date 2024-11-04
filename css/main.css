@@ -28,21 +28,7 @@ section.skateboard { display: flex; flex-direction: column; align-items: center;
 .skateboard img { margin: -1vw 0; z-index: 1000; width: 80vw; }
 
 section.albums { color: #fff; background: #000; padding: 5vw 0 10rem; }
-.music { display: flex; transform-style: preserve-3d; transform: perspective(50vw); justify-content: center; align-items: center; }
-.music .c { display: block; width: 20vw; height: 20vw; background: #ccc; transition: transform .2s ease-in; margin: 0 -2vw;  }
-.music .c img { width: 100%; display: block;}
-.music .info { display: none; margin-top: 1rem; }
-.music .active { background: blue; z-index: 1000; }
-.music .active .info { display: block; }
-.music .active + .c { transform: rotateY(-10deg); }
-.music .active + .c + .c {  transform: rotateY(-20deg); }
-.music .active + .c + .c + .c { transform: rotateY(-30deg); }
-.music .active + .c + .c + .c + .c {  transform: rotateY(-40deg); }
-.music a:has(+ .active) { transform: rotateY(10deg); }
-.music a:has(+ .c + .active) { transform: rotateY(20deg); }
-.music a:has(+ .c + .c + .active) { transform: rotateY(30deg); }
-.music a:has(+ .c + .c + .c + .active) { transform: rotateY(40deg); }
-.music a:has(+ .c + .c + .c + .c + .active) { transform: rotateY(50deg); }
+.coverflow { margin-top: -80px; }
 
 section.etsy { display: flex; flex-direction: column; align-items: center; padding-top: 5rem; padding-bottom: 5rem; gap: 5rem; }
 

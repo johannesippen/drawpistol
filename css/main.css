@@ -38,8 +38,9 @@ section.etsy { display: flex; flex-direction: column; align-items: center; paddi
 
 section.contact { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 3rem; min-height: 100vh; }
 .contact .cta { display: flex; flex-direction: row; gap: 1rem; }
+.contact .cat { max-width: 30rem; }
 
-section.footer { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 3rem; min-height: 50vh; }
+section.footer { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 3rem; min-height: 50vh; margin-top: 5rem; }
 
 section.legal {}
 .legal h1 img { margin: 0 3vw; width: 94vw; padding: 3vw 0; }

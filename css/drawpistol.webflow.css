@@ -1,0 +1,876 @@
+body {
+  color: #345;
+  font-family: Onest, sans-serif;
+  font-size: .85rem;
+  line-height: 1.25rem;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-size: .85rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+}
+
+a {
+  color: #346;
+  text-decoration: underline;
+}
+
+.section {
+  min-height: 100vh;
+}
+
+.section.music {
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  display: flex;
+  position: sticky;
+}
+
+.section.about {
+  min-height: 100vh;
+}
+
+.section.intro {
+  padding-top: 5vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.record {
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  aspect-ratio: 1;
+  background-image: linear-gradient(#222, #4e4e4e);
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 2vh 2vw 0;
+  display: flex;
+  position: relative;
+  transform: perspective(1000px);
+}
+
+.record.record-placeholder {
+  background-color: #333;
+  border-radius: 1rem;
+  width: 100%;
+  position: sticky;
+  left: auto;
+  right: auto;
+}
+
+.record.record-filler {
+  background-image: url('../images/record-filler.png'), linear-gradient(#222, #4e4e4e);
+  background-position: 100% 100%, 0 0;
+  background-size: cover, auto;
+}
+
+.about-text {
+  max-width: 24rem;
+}
+
+.photo.photo-mikko {
+  object-fit: cover;
+  width: 50%;
+  max-height: 60vh;
+  margin-left: auto;
+}
+
+.about-block {
+  z-index: 1;
+  pointer-events: none;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80vw;
+  max-width: 60rem;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  position: sticky;
+  top: 0;
+}
+
+.artwork-parallax {
+  z-index: 2;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 80vh;
+  position: sticky;
+}
+
+.artwork-parallax.artwork-behind {
+  z-index: 0;
+  width: 80vw;
+  margin-top: 0%;
+  padding-bottom: 0;
+}
+
+.artwork {
+  cursor: pointer;
+  transition: transform .2s;
+  display: block;
+}
+
+.artwork:hover {
+  transform: scale(1.01);
+}
+
+.artwork.artwork-small {
+  z-index: 0;
+  width: 40%;
+}
+
+.artwork.artwork-big {
+  width: 45%;
+}
+
+.artwork.artwork-blurry {
+  opacity: .6;
+  filter: blur(10px);
+  pointer-events: auto;
+  width: 25%;
+  margin-bottom: 30%;
+  transition: all .2s;
+}
+
+.artwork.artwork-blurry:hover {
+  opacity: 1;
+  filter: blur();
+  pointer-events: auto;
+}
+
+.intro-image {
+  width: 100%;
+  margin-top: 5vw;
+}
+
+.record-block {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  flex: 1;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: grid;
+}
+
+.album-text-block {
+  background-color: #222;
+  border-radius: 1rem;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 20vw;
+  min-height: 60vh;
+  margin-top: 0;
+  padding-top: 3rem;
+  display: flex;
+  position: sticky;
+  top: 1rem;
+}
+
+.music.section {
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  color: #fff;
+  background-color: #121212;
+  flex-flow: row;
+  justify-content: center;
+  align-items: flex-start;
+  display: block;
+}
+
+.about.section {
+  background-color: #edead3;
+  background-image: linear-gradient(#edead3, #fff);
+}
+
+.intro.section {
+  background-color: #edead3;
+}
+
+.skateboard.section {
+  background-color: #ccc;
+}
+
+.skateboard-block {
+  z-index: 0;
+  background-image: radial-gradient(circle, #000, #0000 44%), url('../images/teme-push.jpg');
+  background-position: 0 0, 50%;
+  background-size: auto, cover;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  display: flex;
+  position: sticky;
+  top: 0;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+}
+
+.skateboard-info-block {
+  z-index: 10;
+  pointer-events: none;
+  color: #fff;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 80vw;
+  height: 50vh;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5vh;
+  display: flex;
+  position: sticky;
+}
+
+.etsy.section {
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.etsy-block {
+  grid-column-gap: 2vw;
+  grid-row-gap: 2vw;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90vw;
+  margin-top: 5vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  display: none;
+}
+
+.shop-item {
+  flex-flow: column;
+  flex: 1;
+  display: flex;
+}
+
+.shop-img {
+  width: 100%;
+}
+
+.contact.section {
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 5vw;
+  padding-left: 5vw;
+  display: flex;
+  position: relative;
+}
+
+.contact-social-media {
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  display: flex;
+}
+
+.social-media-icon {
+  width: 3rem;
+}
+
+.button {
+  text-transform: uppercase;
+  border: .5rem solid #000;
+  border-bottom-width: 1rem;
+  border-radius: 5rem;
+  padding: 2rem 5rem 2rem 4rem;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 3rem;
+}
+
+.album-label-item {
+  justify-content: space-between;
+  align-items: center;
+  margin-left: .5rem;
+  margin-right: .5rem;
+  padding: 0;
+  display: flex;
+  position: relative;
+}
+
+.album-label-item:hover {
+  background-color: #3a3939;
+  border-radius: .5rem;
+}
+
+.footer-nav {
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.footer-nav.footer-nav-sections {
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
+  background-color: #fff;
+  border-radius: 3rem;
+  margin-left: -.5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+.footer-nav.footer-nav-cta {
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+}
+
+.footer {
+  z-index: 100;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  display: flex;
+  position: fixed;
+  inset: auto 0% 0%;
+}
+
+.footer-nav-link {
+  opacity: .5;
+  color: #4d6680;
+  padding: .5rem .75rem;
+  -webkit-text-decoration: underline #4d66804d;
+  text-decoration: underline #4d66804d;
+}
+
+.footer-nav-link.active {
+  opacity: 1;
+  color: #345;
+}
+
+.footer-nav-link.instagram {
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
+  opacity: 1;
+  color: #fff;
+  background-color: #e23c56;
+  background-image: linear-gradient(135deg, #ebb14c, #e13164 53%, #8b3baa);
+  border-radius: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+}
+
+.footer-button {
+  color: #fff;
+  letter-spacing: .05rem;
+  text-transform: uppercase;
+  background-color: #4892b9;
+  border-radius: 2rem;
+  padding: .75rem 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.footer-button:hover {
+  background-image: linear-gradient(#0003, #0003);
+}
+
+.shop-image {
+  background-color: #f5f6f7;
+  margin-bottom: 1rem;
+  padding: 2rem;
+}
+
+.shop-image:hover {
+  background-image: radial-gradient(circle, #fff, #0000004d);
+}
+
+.record-cover {
+  aspect-ratio: 1;
+  transform-origin: 50% 0;
+  object-fit: contain;
+  flex: 0 auto;
+  width: 90%;
+}
+
+.album-title {
+  font-size: 1rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.album-artist {
+  opacity: .5;
+  text-decoration: underline;
+}
+
+.record-skeleton {
+  background-color: #2a2929;
+  border-radius: .5rem;
+  justify-content: center;
+  align-items: center;
+  width: 50vh;
+  height: 50vh;
+  display: flex;
+}
+
+.record-skeleton-disc {
+  border: 20vh solid #000;
+  border-radius: 50vh;
+  width: 48vh;
+  height: 48vh;
+}
+
+.image-2 {
+  width: 50%;
+  max-width: 40rem;
+}
+
+.pricing-label {
+  opacity: .8;
+  color: #346;
+  letter-spacing: .05rem;
+  text-transform: uppercase;
+  margin-top: .5rem;
+  text-decoration: none;
+  display: block;
+}
+
+.image-3 {
+  width: 100%;
+  display: block;
+}
+
+.cat {
+  opacity: 1;
+  max-width: 40%;
+  transition: opacity 1.5s cubic-bezier(.95, .05, .795, .035);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.artwork-behind-wrapper {
+  position: absolute;
+  left: 10vw;
+}
+
+.board-top {
+  z-index: 100;
+}
+
+.image-6 {
+  object-fit: cover;
+  max-width: 30rem;
+}
+
+.shop-text {
+  flex: 0 auto;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  display: flex;
+}
+
+.etsy-text {
+  max-width: 20rem;
+}
+
+.album-item-link {
+  width: 1rem;
+  margin-left: 1rem;
+}
+
+.ext-link {
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #fff3;
+  border-radius: 3rem;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 2.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-decoration: none;
+  display: flex;
+}
+
+.record-placeholder {
+  background-color: #222;
+  background-image: url('../images/record.png');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: auto 70vh;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  position: sticky;
+  top: 1rem;
+}
+
+.album-jump-link {
+  color: #fff;
+  flex-flow: column;
+  flex: 1;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: 1rem;
+  text-decoration: none;
+  display: flex;
+}
+
+.text-block {
+  color: #fff;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.div-block {
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.record-meta {
+  opacity: 0;
+  transition: opacity .2s;
+  display: block;
+  position: absolute;
+  top: 1rem;
+}
+
+.record-cover-image {
+  transform-origin: 50% 0;
+  width: 100%;
+  display: block;
+}
+
+.artwork-curtain.active {
+  z-index: 10000;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  background-color: #000c;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  inset: 0%;
+}
+
+.image-7 {
+  width: 16px;
+}
+
+@media screen and (max-width: 991px) {
+  .about-block {
+    grid-column-gap: 5vw;
+    grid-row-gap: 5vw;
+  }
+
+  .record-block {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .music.section {
+    display: block;
+  }
+
+  .etsy.section {
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .record-cover {
+    flex: none;
+    width: 80%;
+    max-width: 80%;
+  }
+
+  .cat {
+    top: auto;
+  }
+
+  .ext-link {
+    height: 2rem;
+  }
+
+  .record-placeholder {
+    background-size: 80%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .record.record-placeholder {
+    display: none;
+  }
+
+  .about-text {
+    max-width: none;
+  }
+
+  .about-text.skate-text {
+    background-color: #123c;
+    padding: 5vw;
+  }
+
+  .photo.photo-mikko {
+    width: 50vw;
+    max-width: none;
+    height: 50vw;
+    max-height: none;
+    margin-right: auto;
+  }
+
+  .about-block {
+    height: auto;
+    top: 30vh;
+  }
+
+  .artwork.artwork-small {
+    width: 45%;
+  }
+
+  .album-text-block {
+    display: none;
+  }
+
+  .about.section {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+  }
+
+  .intro.section {
+    min-height: 0;
+  }
+
+  .skateboard-block {
+    background-image: url('../images/Bastante-Surreal-2022.jpg');
+    background-position: 50%;
+    background-size: cover;
+  }
+
+  .image {
+    display: none;
+  }
+
+  .etsy-block {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-nav.footer-nav-sections {
+    grid-column-gap: .5rem;
+    grid-row-gap: .5rem;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .footer-nav.footer-nav-cta {
+    flex-flow: column-reverse;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  .footer {
+    padding-left: 0;
+    display: block;
+    position: static;
+  }
+
+  .record-cover {
+    flex: none;
+    width: 80%;
+  }
+
+  .album-artist {
+    display: block;
+  }
+
+  .pricing-label {
+    z-index: 0;
+  }
+
+  .board-trigger {
+    display: none;
+  }
+
+  .album-item-link {
+    margin-left: 1rem;
+    display: none;
+  }
+
+  .ext-link {
+    color: #fff;
+    text-align: center;
+    background-color: #0000;
+    border-style: none;
+    border-radius: 0;
+    width: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-decoration: none;
+  }
+
+  .record-cover-image {
+    transform-origin: 50% 0;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .about-block {
+    bottom: 20vh;
+  }
+
+  .artwork-parallax {
+    padding-top: 40vh;
+  }
+
+  .etsy.section {
+    min-height: auto;
+    position: static;
+  }
+
+  .contact.section {
+    padding-right: 5vw;
+  }
+
+  .footer-nav.footer-nav-sections {
+    grid-column-gap: 0rem;
+    grid-row-gap: 0rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .footer-nav-link {
+    margin-left: -.25rem;
+    margin-right: -.25rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+
+  .footer-nav-link.instagram {
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    position: fixed;
+    bottom: 4rem;
+    right: 1rem;
+  }
+
+  .record-cover {
+    flex: none;
+  }
+
+  .album-title {
+    font-size: .7rem;
+  }
+
+  .image-2 {
+    width: 100%;
+  }
+
+  .cat {
+    opacity: 1;
+    max-width: 80%;
+    margin-bottom: 3rem;
+    position: static;
+    bottom: 0;
+  }
+
+  .image-6 {
+    max-width: 100%;
+    position: static;
+  }
+
+  .shop-text {
+    width: 80%;
+  }
+
+  .etsy-text {
+    margin-bottom: 5rem;
+  }
+
+  .album-item-link {
+    width: .75rem;
+    margin-left: .5rem;
+    display: none;
+  }
+
+  .ext-link {
+    text-align: center;
+    height: 1.85rem;
+    margin-top: -.5rem;
+    margin-left: 0;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    font-size: .75rem;
+    line-height: .95rem;
+  }
+
+  .record-meta {
+    opacity: 1;
+  }
+
+  .text-block-2 {
+    display: none;
+  }
+}
+
+
